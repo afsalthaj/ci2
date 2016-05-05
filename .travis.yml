@@ -11,7 +11,7 @@ before_script:
 script:
 - bashcov -- ./test.bsh
 - ./setup-version.bsh
-- tar -X $TRAVIS_BUILD_DIR/ci2/.exclude -C $TRAVIS_BUILD_DIR -cvzf /tmp/ci2-$(cat VERSION).tar.gz ci2
+- tar -X .exclude -C ../ -cvzf /tmp/ci2-$(cat VERSION).tar.gz ci2
 # check that we can unarchive our creation
 - cd /tmp
-- tar -xvzf ci2-$(cat $TRAVIS_BUILD_DIR/ci2/VERSION).tar.gz
+- tar -xvzf ci2-$(cat $TRAVIS_BUILD_DIR/VERSION).tar.gz
