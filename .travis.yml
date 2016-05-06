@@ -18,7 +18,7 @@ script:
   - tar -xvzf /tmp/ci2.tar.gz
 
 after_success:
-  - export RELEASE_BRANCHES=(ci2-cleanup)
+  - export RELEASE_BRANCHES=("ci2-cleanup")
   - ./setup-version.bsh
   - mv /tmp/ci2.tar.gz ci2-$(cat VERSION).tar.gz
   - ./ci-release.bsh ./artifactory-release.sh private-binaries/zbi/ci2 ci2-$(cat VERSION).tar.gz
